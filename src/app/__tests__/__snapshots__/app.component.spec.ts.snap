@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AppComponent should match snapshot 1`] = `
+<my-app>
+  <hello
+    name=""
+  />
+  <p>
+     Start editing to see some magic happen :)
+
+  </p>
+</my-app>
+`;
