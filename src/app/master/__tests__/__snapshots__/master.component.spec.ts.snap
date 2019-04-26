@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MasterComponent should match snapshot 1`] = `
+<ng-component>
+  <h1>
+    Angular with Jest sauce
+  </h1>
+  <ul>
+    <li>
+      <a
+        click={[Function]}
+        href="/todo"
+        ng-reflect-router-link="/todo"
+        ng-reflect-router-link-active="active"
+        routerLink="/todo"
+        routerLinkActive="active"
+        target={null}
+      >
+        Todo sub-app
+      </a>
+    </li>
+  </ul>
+  <router-outlet />
+</ng-component>
+`;

@@ -1,0 +1,6 @@
+.idea
+node_modules
+.jest
+
+# might be useful in future
+/coverage

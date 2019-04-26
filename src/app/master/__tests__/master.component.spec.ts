@@ -1,25 +1,26 @@
-import { ComponentFixture } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
-import { AppComponent } from '../app.component';
 import { ConfigureFn, configureTests } from '@lib/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 
-describe('AppComponent', () => {
-  let fixture: ComponentFixture<AppComponent>;
-  let component: AppComponent;
+import { MasterComponent } from '../master.component';
+import { ComponentFixture } from '@angular/core/testing';
+
+describe('MasterComponent', () => {
+  let fixture: ComponentFixture<MasterComponent>;
+  let component: MasterComponent;
 
   beforeEach(() => {
     const configure: ConfigureFn = testBed => {
       testBed.configureTestingModule({
-        declarations: [AppComponent],
+        declarations: [MasterComponent],
         imports: [RouterTestingModule, NoopAnimationsModule],
         schemas: [NO_ERRORS_SCHEMA]
       });
     };
 
     configureTests(configure).then(testBed => {
-      fixture = testBed.createComponent(AppComponent);
+      fixture = testBed.createComponent(MasterComponent);
       component = fixture.componentInstance;
       fixture.detectChanges();
     });
@@ -29,7 +30,8 @@ describe('AppComponent', () => {
     expect(fixture).toMatchSnapshot();
   });
 
-  it('should create the app', () => {
-    expect(component).toBeDefined();
+  it('should render title in a h1 tag', () => {
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('h1').textContent).toContain('Angular with Jest sauce');
   });
 });
